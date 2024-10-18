@@ -18,6 +18,7 @@ jobs:
         with:
           version: "latest"
           verb: call
+          workdir: hello
           args: build --source=.
     # name: Publish hello app
     # runs-on: ubuntu-latest
