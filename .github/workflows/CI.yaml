@@ -9,8 +9,18 @@ on:
 
 jobs:
   CI:
-    name: Publish hello app
+    name: hello
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      -
+        name: Call Dagger Function
+        uses: dagger/dagger-for-github@v6
+        with:
+          version: "latest"
+          verb: call
+          args: build --source=.
+    # name: Publish hello app
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Checkout code
+    #     uses: actions/checkout@v4
